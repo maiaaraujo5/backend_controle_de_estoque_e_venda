@@ -1,34 +1,31 @@
 import {MigrationInterface, QueryRunner, TableColumn, TableForeignKey} from "typeorm";
 
-export default class AddLoginToSellers1605375867440 implements MigrationInterface {
+export default class AddUserToSales1605380006842 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn(
-            'sellers',
+            'sales',
             new TableColumn({
-                name: 'login_id',
+                name: 'user_id',
                 type: 'uuid',
                 isNullable: true
-            }),
-        );
-
-        await queryRunner.createForeignKey(
-            'sellers',
-            new TableForeignKey({
-                name: 'SellerLogin',
-                columnNames: ['login_id'],
-                referencedTableName: 'logins',
-                referencedColumnNames: ['id'],
-                onDelete: 'SET NULL',
-                onUpdate: 'CASCADE'
             })
         )
+
+        await queryRunner.createForeignKey(
+            'sales',
+            new TableForeignKey({
+                name: 'SalesProductSellerId',
+                columnNames: ['user_id'],
+                referencedColumnNames: ['id'],
+                referencedTableName: 'users',
+                onDelete: 'SET NULL',
+                onUpdate: 'CASCADE'
+            }))
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('sellers', 'SellerLogin')
-
-        await queryRunner.dropColumn('sellers', 'login_id')
+        await queryRunner.dropForeignKey('sales', 'SalesProductSellerId')
+        await queryRunner.dropColumn('sales', 'user_id')
     }
-
 }

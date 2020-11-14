@@ -26,7 +26,7 @@ export default class AddCategoryToProducts1605377565099 implements MigrationInte
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropForeignKey('products', 'ProductCategory')
-        await queryRunner.dropColumn('appointments', 'category_id')
+        await queryRunner.dropColumn('products', 'category_id')
     }
 
 }

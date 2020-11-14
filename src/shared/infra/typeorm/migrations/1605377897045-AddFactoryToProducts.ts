@@ -26,7 +26,7 @@ export class AddFactoryToProducts1605377897045 implements MigrationInterface {
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropForeignKey('products', 'ProductFactory')
-        await queryRunner.dropColumn('appointments', 'factory_id')
+        await queryRunner.dropColumn('products', 'factory_id')
     }
 
 
