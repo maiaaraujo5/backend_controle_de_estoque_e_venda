@@ -1,5 +1,5 @@
-import Category from "@modules/category/infra/typeorm/entities/Category";
-import ICreateCategoryDTO from "@modules/category/dtos/ICreateCategoryDTO";
+import Category from "@modules/categories/infra/typeorm/entities/Category";
+import ICreateCategoryDTO from "@modules/categories/dtos/ICreateCategoryDTO";
 
 export default interface ICategoriesRepository {
     findAllCategories(): Promise<Category[]>;

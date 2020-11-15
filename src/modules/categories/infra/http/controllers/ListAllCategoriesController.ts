@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import {container} from 'tsyringe';
-import ListAllCategoriesService from "@modules/category/services/ListAllCategoriesService";
+import ListAllCategoriesService from "@modules/categories/services/ListAllCategoriesService";
 
 
 export default class CategoryController {

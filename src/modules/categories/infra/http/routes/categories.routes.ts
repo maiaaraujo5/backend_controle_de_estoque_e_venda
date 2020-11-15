@@ -1,7 +1,7 @@
 import {Router} from "express";
-import CategoryController from "@modules/category/infra/http/controllers/CategoryController";
-import DeleteCategoryController from "@modules/category/infra/http/controllers/DeleteCategoryController";
-import ListAllCategoriesController from "@modules/category/infra/http/controllers/ListAllCategoriesController";
+import CategoryController from "@modules/categories/infra/http/controllers/CategoryController";
+import DeleteCategoryController from "@modules/categories/infra/http/controllers/DeleteCategoryController";
+import ListAllCategoriesController from "@modules/categories/infra/http/controllers/ListAllCategoriesController";
 import {celebrate, Joi, Segments} from "celebrate";
 
 const categoryRouter = Router()

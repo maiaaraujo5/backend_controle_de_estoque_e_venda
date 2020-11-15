@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 import {container} from 'tsyringe';
-import CreateCategoryService from "@modules/category/services/CreateCategoryService";
+import CreateCategoryService from "@modules/categories/services/CreateCategoryService";
 
 export default class CategoryController {
     public async create(request: Request, response: Response): Promise<Response> {
