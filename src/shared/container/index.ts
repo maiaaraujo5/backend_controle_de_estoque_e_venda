@@ -16,6 +16,9 @@ import VariationRepository from "@modules/variations/infra/typeorm/repositories/
 import IProductsRepository from "@modules/products/repositories/IProductsRepository";
 import ProductsRepository from "@modules/products/infra/typeorm/repositories/ProductsRepository";
 
+import IProductsVariationsRepository from "@modules/products/repositories/IProductsVariationsRepository";
+import ProductsVaritionsRepository from "@modules/products/infra/typeorm/repositories/ProductsVaritionsRepository";
+
 container.registerSingleton<IUsersRepository>(
     'UsersRepository',
     UsersRepository
@@ -40,3 +43,7 @@ container.registerSingleton<IProductsRepository>(
     ProductsRepository
 )
 
+container.registerSingleton<IProductsVariationsRepository>(
+    'ProductsVariationsRepository',
+    ProductsVaritionsRepository
+)

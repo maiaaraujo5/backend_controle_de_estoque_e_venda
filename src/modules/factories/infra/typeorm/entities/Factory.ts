@@ -1,4 +1,5 @@
 import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import {Exclude} from "class-transformer";
 
 @Entity('factories')
 export default class Factory {
@@ -10,5 +11,6 @@ export default class Factory {
     name: string
 
     @CreateDateColumn()
+    @Exclude()
     created_at: Date
 }
