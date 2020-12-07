@@ -30,11 +30,11 @@ class ProductVariation {
     @Column()
     variation_id: string
 
-    @ManyToOne(() => Variations, variation => variation.name, {
+    @ManyToOne(() => Variations, variation => variation, {
         eager: true
     })
     @JoinColumn({name: 'variation_id'})
-    variation: string
+    variation: Variations
 
     @Column()
     variation_value: string

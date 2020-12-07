@@ -6,7 +6,6 @@ export default class FindProductVariationsController {
     public async find(request: Request, response: Response): Promise<Response> {
 
         const {id} = request.params
-        console.log("id: " + id)
 
         const findProductsVariationsService = container.resolve(FindProductsVariationsService)
 
